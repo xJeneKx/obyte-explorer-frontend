@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const LOGS_DIR = './logs';
+const LOGS_DIR = join(__dirname, 'logs');
 
 interface BaseLogEntry {
   timestamp: string;
@@ -91,7 +91,6 @@ export const logFetchRequest = async (url: string, options: any, response: any, 
             JSON.stringify(logEntry, null, 2) + '\n\n',
             { encoding: 'utf-8' }
           );
-          console.log(`Request logged to ${logFile}`);
         } catch (writeErr) {
           console.error('Error writing fetch log:', writeErr);
           throw writeErr;
