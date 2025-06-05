@@ -163,22 +163,12 @@ onUnmounted(() => {
 
 <template>
   <div class="up top-40 sm:top-28 lg:top-20 right-[2%] xl:right-[35%]">
-    <button
-      class="btn btn-ghost btn-circle tooltip tooltip-left"
-      data-tip="To most recent units"
-      @click="resetUnit"
-    >
-      <ArrowCircleUpIcon
-        class="h-12 w-12 text-gray-700 opacity-70 hover:opacity-90"
-        style="margin-top: -1px"
-      />
+    <button class="btn btn-ghost btn-circle tooltip tooltip-left" data-tip="To most recent units" @click="resetUnit">
+      <ArrowCircleUpIcon class="h-12 w-12 text-gray-700 opacity-70 hover:opacity-90" style="margin-top: -1px" />
     </button>
   </div>
-  <div
-    class="alert alert-error shadow-lg absolute w-72 cursor-pointer"
-    :class="{ alertShown: alertShown }"
-    @click="hideAlert"
-  >
+  <div class="alert alert-error shadow-lg absolute w-72 cursor-pointer" :class="{ alertShown: alertShown }"
+    @click="hideAlert">
     <div>
       <ExclamationIcon class="h-6 w-6 text-gray-50" style="margin-top: -1px" />
       <span class="text-gray-50">Unit not found</span>
