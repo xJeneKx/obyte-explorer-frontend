@@ -32,6 +32,7 @@ const option = ref({
       label: {
         position: "inner",
         fontSize: 11,
+        formatter: ({ data }) => data.labelName,
       },
       labelLine: {
         show: false,
@@ -52,7 +53,7 @@ function click(params) {
   const { name, event } = params;
   if (event.target.type !== "tspan") return;
 
-  router.push(`/asset/${params.data.asset || name}`);
+  router.push(`/asset/${name}`);
 }
 </script>
 
