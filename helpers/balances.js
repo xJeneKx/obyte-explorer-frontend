@@ -9,7 +9,7 @@ export function prepareDataForPieFromBalances(balances, rates) {
   for (let asset in balances) {
     const balance = balances[asset].balance;
     let decimals = balances[asset].assetDecimals || 0;
-    const assetName = balances[asset].assetName || "GBYTE";
+    const assetName = asset === "bytes" ? "GBYTE" : (balances[asset].assetName || `${asset.slice(0, 5)}...`);
 
     let assetForRate = asset;
     if (asset === "bytes") {
@@ -27,7 +27,7 @@ export function prepareDataForPieFromBalances(balances, rates) {
       continue;
     }
 
-    chartData.push({ value: valueInUsd, name: assetName });
+    chartData.push({ value: valueInUsd, name: assetName, asset });
   }
 
   chartData.sort((a, b) => b.value - a.value);

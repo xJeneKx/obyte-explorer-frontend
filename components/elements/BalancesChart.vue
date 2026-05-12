@@ -52,7 +52,7 @@ function click(params) {
   const { name, event } = params;
   if (event.target.type !== "tspan") return;
 
-  router.push(`/asset/${name}`);
+  router.push(`/asset/${params.data.asset || name}`);
 }
 </script>
 
