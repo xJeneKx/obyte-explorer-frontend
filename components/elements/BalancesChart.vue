@@ -32,6 +32,7 @@ const option = ref({
       label: {
         position: "inner",
         fontSize: 11,
+        formatter: ({ data }) => data.labelName,
       },
       labelLine: {
         show: false,
